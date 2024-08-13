@@ -56,7 +56,7 @@ const HeroSlider = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-      hero Slider
+      {/* hero Slider */}
     </div>
   );
 };
