@@ -212,7 +212,7 @@ function BottomNavBar() {
               </div>
             </div>
             {isDropdownOpen && (
-              <div className="absolute right-0 z-50 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg">
+              <div className="absolute right-0 z-50 w-full mt-0 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-b-md shadow-lg">
                 <div className="py-1">
                   <a
                     href="#"
