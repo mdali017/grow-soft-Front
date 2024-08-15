@@ -6,16 +6,19 @@ import PopularSellSection from "./PopularSellSection/PopularSellSection";
 import NewArrivalsSection from "./NewArrivalsSection/NewArrivalsSection";
 import TopSellingProducts from "./TopSellingProducts/TopSellingProducts";
 import DiscountSection from "./DiscountSection/DiscountSection";
+import TechWorldSection from "./TechWorldSection/TechWorldSection";
+import AddSectionOne from "./AddSectionOne/AddSectionOne";
 
 function Home() {
   return (
     <div>
       <HeroSlider />
       <ShippingSection />
+      <TechWorldSection />
       <PopularSellSection />
       <NewArrivalsSection />
-      <TopSellingProducts />
       <DiscountSection />
+      <TopSellingProducts />
     </div>
   );
 }

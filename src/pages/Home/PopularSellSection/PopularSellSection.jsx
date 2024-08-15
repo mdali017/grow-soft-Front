@@ -11,6 +11,9 @@ import productImgEight from "../../../assets/images/product-img-8.png";
 import productImgNine from "../../../assets/images/product-img-9.png";
 import productImgTen from "../../../assets/images/product-img-10.png";
 import { FaArrowRight } from "react-icons/fa";
+import SectionTitle from "../../../components/Common/SectionTitle";
+import AddSectionOne from "../AddSectionOne/AddSectionOne";
+import addImg_01 from "../../../assets/images/ads-4.png";
 
 const PopularSellSection = () => {
   const popularSellSectionData = [
@@ -103,12 +106,13 @@ const PopularSellSection = () => {
   return (
     <div>
       <Container>
-        <div className="flex justify-between items-center">
+        {/* <div className="flex justify-between items-center">
           <h1>Popular Seles</h1>
           <div className="flex items-center gap-2">
             <span>View More</span> <FaArrowRight />
           </div>
-        </div>
+        </div> */}
+        <SectionTitle title={"Popular Sells"} />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           {popularSellSectionData.map((item, index) => (
             <div key={index} className="flex items-center gap-4">
@@ -124,6 +128,9 @@ const PopularSellSection = () => {
           ))}
         </div>
       </Container>
+      <div className="mt-20">
+        <AddSectionOne img={addImg_01} />
+      </div>
     </div>
   );
 };

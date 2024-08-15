@@ -12,6 +12,18 @@ const HeroSlider = () => {
   //     progressCircle.current.style.setProperty("--progress", 1 - progress);
   //     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   //   };
+
+  const heroimages = [
+    {
+      id: 1,
+      img: "https://images.pexels.com/photos/68525/soap-colorful-color-fruit-68525.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      id: 2,
+      img: "https://images.pexels.com/photos/68525/soap-colorful-color-fruit-68525.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+  ];
+
   return (
     <div className="">
       <Swiper
@@ -28,33 +40,19 @@ const HeroSlider = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px]">
-            <img
-              className="w-full h-full object-cover"
-              src="https://images.pexels.com/photos/68525/soap-colorful-color-fruit-68525.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="Slide 1"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px]">
-            <img
-              className="w-full h-full object-cover"
-              src="https://images.pexels.com/photos/68525/soap-colorful-color-fruit-68525.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="Slide 2"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px]">
-            <img
-              className="w-full h-full object-cover"
-              src="https://images.pexels.com/photos/68525/soap-colorful-color-fruit-68525.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="Slide 3"
-            />
-          </div>
-        </SwiperSlide>
+        <div>
+          {heroimages.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="w-full h-[455px]">
+                <img
+                  className="w-full h-full object-cover"
+                  src="https://images.pexels.com/photos/68525/soap-colorful-color-fruit-68525.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  alt="Slide 1"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </div>
       </Swiper>
       {/* hero Slider */}
     </div>

@@ -10,6 +10,7 @@ import productFive from "../../../assets/images/product-img-5.png";
 import productSix from "../../../assets/images/product-img-6.png";
 import productSeven from "../../../assets/images/product-img-7.png";
 import productEight from "../../../assets/images/product-img-8.png";
+import SectionTitle from "../../../components/Common/SectionTitle";
 
 const NewArrivalsSection = () => {
   const newArrivalProducts = [
@@ -80,14 +81,9 @@ const NewArrivalsSection = () => {
   ];
 
   return (
-    <div className="bg-[#f2efef]">
+    <div className="bg-[#f2efef] py-10">
       <Container>
-        <div className="flex justify-between items-center py-10">
-          <h1 className="text-3xl">New Arrivals</h1>
-          <div className="flex items-center gap-2">
-            <span>View More</span> <FaArrowRight />
-          </div>
-        </div>
+        <SectionTitle title={"New Arrivals"} />
         <div className="grid grid-cols-4 gap-4">
           {newArrivalProducts.map((item) => (
             <ProductCard key={item.id} item={item} />

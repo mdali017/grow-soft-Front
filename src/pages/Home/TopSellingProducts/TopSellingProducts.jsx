@@ -45,8 +45,8 @@ const TopSellingProducts = () => {
 
   return (
     <Container>
-      <div>
-        <SectionTitle />
+      <div className="my-10">
+        <SectionTitle title={"Top Selling Products"} />
         <div className="grid grid-cols-2 gap-x-5 gap-y-10">
           {topSellingProducts.map((item, index) => (
             <ProductCard01 key={index} item={item} />
