@@ -7,7 +7,7 @@ import qualityicon from "../../../assets/icons/qualityicon.svg";
 
 const ShippingSection = () => {
   return (
-    <div className="py-10">
+    <div className="py-20">
       <Container>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           <div className="flex items-center gap-3">

@@ -18,7 +18,7 @@ const ProductCard = ({ item }) => {
         </div>
 
         <p className="card-info">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         {item?.name}
         </p>
         <div className="flex gap-2 my-2">
           <del className="text-xl">$99.99</del>
