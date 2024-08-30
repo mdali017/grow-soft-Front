@@ -117,18 +117,64 @@ function NavListMenu() {
   );
 }
 
+// for Home Sub Menu:
+function HomeSubMenu() {
+  const [isHomeMenuOpen, setIsHomeMenuOpen] = useState(false);
+
+  const homeMenuItems = [
+    { title: "Home One", href: "#" },
+    { title: "Home Two", href: "#" },
+    { title: "Home Three", href: "#" },
+  ];
+
+  const renderHomeItems = homeMenuItems.map(({ title, href }, key) => (
+    <a href={href} key={key}>
+      <MenuItem className="flex items-center gap-3 rounded-lg">
+        <Typography
+          variant="small"
+          className="flex items-center text-sm font-medium"
+        >
+          {title}
+        </Typography>
+      </MenuItem>
+    </a>
+  ));
+
+  return (
+    <Menu
+      open={isHomeMenuOpen}
+      handler={setIsHomeMenuOpen}
+      placement="bottom"
+      offset={{ mainAxis: 10 }}
+      allowHover={true}
+    >
+      <MenuHandler>
+        <ListItem
+          className="flex items-center  gap-2 py-2 pr-4 text-[14px] -mt-1 font-medium text-gray-900"
+          onClick={() => setIsHomeMenuOpen((cur) => !cur)}
+        >
+          Homepage
+          <FaChevronDown
+            className={`transition-transform size-[12px] ${
+              isHomeMenuOpen ? "rotate-180" : ""
+            }`}
+          />
+        </ListItem>
+      </MenuHandler>
+      <MenuList className="hidden max-w-screen-sm rounded-xl mt-2 lg:block">
+        <ul className="grid grid-cols-1 gap-y-2 outline-none outline-0">
+          {renderHomeItems}
+        </ul>
+      </MenuList>
+    </Menu>
+  );
+}
+// -------------------
+
 function NavList() {
   return (
     <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
-      <Typography
-        as="a"
-        href="#"
-        variant="small"
-        color="blue-gray"
-        className="font-medium"
-      >
-        <ListItem className="flex items-center gap-2 py-2 pr-4">Home</ListItem>
-      </Typography>
+      <HomeSubMenu />
       <NavListMenu />
       <Typography
         as="a"
@@ -165,14 +211,14 @@ function NavList() {
         className="font-medium"
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4">
-          Contact Us
+          Contact
         </ListItem>
       </Typography>
     </List>
   );
 }
 
-function BottomNavBar() {
+function BottomNavBar({themeColor}) {
   const [openNav, setOpenNav] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -184,7 +230,7 @@ function BottomNavBar() {
   }, []);
 
   return (
-    <div className="relative bg-[#FFBB38] h-[60px] z-50">
+    <div className="relative bg-[#FFBB38] h-[60px] z-50" style={{background: themeColor ? themeColor : ""}}>
       <Navbar className="container bg-transparent border-none shadow-none h-full relative z-50">
         <div className="flex items-center justify-between text-blue-gray-900 relative z-50">
           <div className="relative inline-block text-left dropdown -ms-6">
@@ -241,8 +287,12 @@ function BottomNavBar() {
             <NavList />
           </div>
           <div className="hidden gap-2 lg:flex w-[161px] -mt-4 -me-4">
-            <Button className="capitalize text-sm font-[600] rounded-none bg-black" variant="gradient" size="">
-              Become a Seller 
+            <Button
+              className="capitalize text-sm font-[600] rounded-none bg-black"
+              variant="gradient"
+              size=""
+            >
+              Become a Seller
             </Button>
           </div>
         </div>

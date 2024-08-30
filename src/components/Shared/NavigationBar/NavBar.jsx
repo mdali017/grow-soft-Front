@@ -3,14 +3,12 @@ import TopNavBar from "./TopNavBar";
 import MiddleNavBar from "./MiddleNavBar";
 import BottomNavBar from "./BottomNavBar";
 
-function NavBar() {
+function NavBar({ themeColor }) {
   return (
     <div>
       <TopNavBar />
-      
-        <MiddleNavBar />
-        <BottomNavBar />
-     
+      <MiddleNavBar />
+      <BottomNavBar themeColor={themeColor} />
     </div>
   );
 }

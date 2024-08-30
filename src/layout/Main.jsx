@@ -1,12 +1,21 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import NavBar from "../components/Shared/NavigationBar/NavBar";
 import Footer from "../components/Shared/Footer/Footer";
 
 function Main() {
+  const location = useLocation();
+
+  let themeColor;
+
+  if ((location.pathname = "/home-two")) {
+    themeColor = "#2D6F6D";
+  }
+
+  console.log(location);
   return (
     <div>
-      <NavBar />
+      <NavBar themeColor={themeColor} />
       <Outlet />
       <Footer />
     </div>
