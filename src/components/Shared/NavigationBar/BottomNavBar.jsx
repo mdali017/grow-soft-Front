@@ -13,6 +13,7 @@ import {
 } from "@material-tailwind/react";
 import { RiMenu2Line } from "react-icons/ri";
 import { FaChevronDown } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const navListMenuItems = [
   {
@@ -122,13 +123,13 @@ function HomeSubMenu() {
   const [isHomeMenuOpen, setIsHomeMenuOpen] = useState(false);
 
   const homeMenuItems = [
-    { title: "Home One", href: "#" },
-    { title: "Home Two", href: "#" },
-    { title: "Home Three", href: "#" },
+    { title: "Home One", href: "/" },
+    { title: "Home Two", href: "/home-two" },
+    { title: "Home Three", href: "/home-three" },
   ];
 
   const renderHomeItems = homeMenuItems.map(({ title, href }, key) => (
-    <a href={href} key={key}>
+    <Link to={href} key={key}>
       <MenuItem className="flex items-center gap-3 rounded-lg">
         <Typography
           variant="small"
@@ -137,7 +138,7 @@ function HomeSubMenu() {
           {title}
         </Typography>
       </MenuItem>
-    </a>
+    </Link>
   ));
 
   return (
@@ -218,7 +219,7 @@ function NavList() {
   );
 }
 
-function BottomNavBar({themeColor}) {
+function BottomNavBar({ themeColor }) {
   const [openNav, setOpenNav] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -230,7 +231,10 @@ function BottomNavBar({themeColor}) {
   }, []);
 
   return (
-    <div className="relative bg-[#FFBB38] h-[60px] z-50" style={{background: themeColor ? themeColor : ""}}>
+    <div
+      className="relative bg-[#FFBB38] h-[60px] z-50"
+      style={{ background: themeColor ? themeColor : "" }}
+    >
       <Navbar className="container bg-transparent border-none shadow-none h-full relative z-50">
         <div className="flex items-center justify-between text-blue-gray-900 relative z-50">
           <div className="relative inline-block text-left dropdown -ms-6">
