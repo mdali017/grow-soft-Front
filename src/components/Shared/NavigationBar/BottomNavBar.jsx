@@ -204,17 +204,19 @@ function NavList() {
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4">About</ListItem>
       </Typography>
-      <Typography
-        as="a"
-        href="#"
-        variant="small"
-        color="blue-gray"
-        className="font-medium"
-      >
-        <ListItem className="flex items-center gap-2 py-2 pr-4">
-          Contact
-        </ListItem>
-      </Typography>
+      <Link to="/contact">
+        <Typography
+          as="a"
+          href="#"
+          variant="small"
+          color="blue-gray"
+          className="font-medium"
+        >
+          <ListItem className="flex items-center gap-2 py-2 pr-4">
+            Contact
+          </ListItem>
+        </Typography>
+      </Link>
     </List>
   );
 }
