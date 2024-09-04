@@ -5,7 +5,6 @@ import { GiRecycle } from "react-icons/gi";
 import { MdOutlineShoppingBag } from "react-icons/md";
 
 const ProductCard = ({ item }) => {
-  console.log(item);
   return (
     <div className="card border border-indigo-600 border-opacity-20">
       <div className="w-full h-[300px] ">

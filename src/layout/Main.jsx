@@ -12,7 +12,6 @@ function Main() {
     themeColor = "#2D6F6D";
   }
 
-  console.log(location);
   return (
     <div>
       <NavBar themeColor={themeColor} />

@@ -187,8 +187,8 @@ function NavList() {
         <ListItem className="flex items-center gap-2 py-2 pr-4">Shop</ListItem>
       </Typography>
       <Typography
-        as="a"
-        href="#"
+        as={Link}
+        to="/blogs"
         variant="small"
         color="blue-gray"
         className="font-medium"
