@@ -3,6 +3,7 @@ import "./ProductCard.css";
 import { FaRegHeart, FaShoppingCart, FaStar } from "react-icons/fa";
 import { GiRecycle } from "react-icons/gi";
 import { MdOutlineShoppingBag } from "react-icons/md";
+import { GrCart } from "react-icons/gr";
 
 const ProductCard = ({ item }) => {
   return (
@@ -24,10 +25,11 @@ const ProductCard = ({ item }) => {
           <p>$80.99</p>
         </div>
       </div>
-      <div className="card-icon flex flex-col gap-5">
-        <FaShoppingCart size={30} />
-        <GiRecycle size={30} />
-        <FaRegHeart size={30} />
+      <div className="card-icon flex flex-col gap-5 border rounded-full bg-orange-400 px-2 py-3">
+        {/* <FaShoppingCart size={30} /> */}
+        <GrCart className="text-red-500 hover:text-red-700" size={25} />
+        <GiRecycle size={25} />
+        <FaRegHeart size={25} />
         {/* <FaShoppingCart className="text-2xl" /> */}
       </div>
       <button className="card-btn  bg-orange-700 mx-auto justify-center flex whitespace-nowrap items-center gap-2">
