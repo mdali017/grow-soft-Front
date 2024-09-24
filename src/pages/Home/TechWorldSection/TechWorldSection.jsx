@@ -12,6 +12,10 @@ import ProductCard from "../../../components/Common/ProductCard/ProductCard";
 import AddSectionOne from "../AddSectionOne/AddSectionOne";
 import addImg_01 from "../../../assets/images/ads-3.png";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
 const TechWorldSection = () => {
   const data = [
     {
@@ -39,6 +43,14 @@ const TechWorldSection = () => {
         },
         {
           id: 3,
+          name: "OnePlus 9 Pro",
+          img: "https://images.pexels.com/photos/63690/pexels-photo-63690.jpeg?auto=compress&cs=tinysrgb&w=600",
+          regular_price: "$969",
+          offered_price: "$869",
+          rating: "4.6",
+        },
+        {
+          id: 4,
           name: "OnePlus 9 Pro",
           img: "https://images.pexels.com/photos/63690/pexels-photo-63690.jpeg?auto=compress&cs=tinysrgb&w=600",
           regular_price: "$969",
@@ -186,9 +198,13 @@ const TechWorldSection = () => {
         <div>
           <div className="">
             <Tabs value="html" orientation="vertical">
-              <TabsHeader className="w-[270px] h-[442px] border bg-gradient-to-r from-amber-600 to-indigo-600">
+              <TabsHeader className="w-[270px] h-auto sm:h-[442px] bg-gradient-to-r from-amber-600 to-indigo-600 border rounded-lg p-2 sm:p-4 space-y-2 sm:space-y-4 overflow-auto">
                 {data.map(({ label, value }) => (
-                  <Tab key={value} value={value}>
+                  <Tab
+                    key={value}
+                    value={value}
+                    className=" font-semibold py-2 px-4 rounded-md hover:bg-amber-400 hover:text-indigo-900 transition-colors ease-in-out duration-300"
+                  >
                     {label}
                   </Tab>
                 ))}
@@ -196,11 +212,42 @@ const TechWorldSection = () => {
               <TabsBody>
                 {data.map(({ value, products }) => (
                   <TabPanel key={value} value={value} className="py-0  ">
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                    {/* Swiper Section Start here */}
+                    <Swiper
+                      spaceBetween={30}
+                      slidesPerView={3}
+                      // centeredSlides={true}
+                      autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                      }}
+                      modules={[Autoplay, Pagination, Navigation]}
+                      className="mySwiper grid grid-cols-1 sm:grid-cols-3 gap-5"
+                    >
+                      <div className=" grid grid-cols-1 sm:grid-cols-3 gap-5">
+                        {products.map((product) => (
+                          <SwiperSlide>
+                            <div>
+                              <ProductCard key={product.id} item={product} />
+                            </div>
+                          </SwiperSlide>
+                        ))}
+                      </div>
+                      {/* <SwiperSlide>Slide 2</SwiperSlide>
+                      <SwiperSlide>Slide 3</SwiperSlide>
+                      <SwiperSlide>Slide 4</SwiperSlide>
+                      <SwiperSlide>Slide 5</SwiperSlide>
+                      <SwiperSlide>Slide 6</SwiperSlide>
+                      <SwiperSlide>Slide 7</SwiperSlide>
+                      <SwiperSlide>Slide 8</SwiperSlide>
+                      <SwiperSlide>Slide 9</SwiperSlide> */}
+                    </Swiper>
+                    {/* Swiper Section End here */}
+                    {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                       {products.map((product) => (
                         <ProductCard key={product.id} item={product} />
                       ))}
-                    </div>
+                    </div> */}
                   </TabPanel>
                 ))}
               </TabsBody>

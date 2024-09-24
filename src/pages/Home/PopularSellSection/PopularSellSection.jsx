@@ -113,7 +113,8 @@ const PopularSellSection = () => {
           </div>
         </div> */}
         <SectionTitle title={"Popular Sells"} />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+        {/* TODO: Link up Product Page */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 cursor-pointer">
           {popularSellSectionData.map((item, index) => (
             <div key={index} className="flex items-center gap-4">
               <img src={item.img} alt="" className="size-24" />
