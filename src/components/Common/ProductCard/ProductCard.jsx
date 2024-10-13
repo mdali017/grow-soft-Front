@@ -4,8 +4,9 @@ import { FaRegHeart, FaShoppingCart, FaStar } from "react-icons/fa";
 import { GiRecycle } from "react-icons/gi";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { GrCart } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
-const ProductCard = ({ item }) => {
+const ProductCard = ({ item, itemInfo }) => {
   return (
     <div className="card border border-indigo-600 border-opacity-20">
       <div className="w-full h-[300px] ">
@@ -19,7 +20,13 @@ const ProductCard = ({ item }) => {
           <FaStar />
         </div>
 
-        <p className="card-info my-2">{item?.title}</p>
+        <Link
+          to={`/products/${item.id}`}
+          state={{ productData: itemInfo }}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          <p className="card-info my-2">{item?.title}</p>
+        </Link>
         <div className="flex gap-2 my-4 ml-[50px] ">
           <del className="text-xl">$99.99</del>
           <p>$80.99</p>
